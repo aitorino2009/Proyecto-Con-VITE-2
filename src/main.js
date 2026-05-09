@@ -1,60 +1,56 @@
-import './style.css'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.js'
+import './styles/style.css';
+import { Navbar } from './components/navbar.js';
+import { Section } from './components/section.js';
 
-document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const app = document.body;
 
-<div class="ticks"></div>
+app.append(
+    Navbar(),
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+    Section({
+        id: 'inicio',
+        contenido: `
+      <h2>Bienvenida al sitio</h2>
+      <p>
+        Soy Tomás, procurador de los tribunales con amplia experiencia en representación
+        procesal en toda clase de procedimientos judiciales.
+      </p>
+      <p>
+        Mi compromiso es ofrecer un servicio profesional, cercano y eficiente,
+        acompañándote en cada paso del proceso judicial.
+      </p>
+      <a class="cta-button" href="#contacto">Contactar ahora</a>
+    `
+    }),
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+    Section({
+        id: 'servicios',
+        contenido: `
+      <h2>Nuestros servicios destacados</h2>
+      <p>Ofrezco representación procesal en los siguientes ámbitos:</p>
+      <ul>
+        <li>Derecho civil y mercantil</li>
+        <li>Derecho de familia (divorcios, custodias, herencias)</li>
+        <li>Derecho laboral</li>
+        <li>Procedimientos contencioso-administrativos</li>
+        <li>Ejecuciones hipotecarias y embargos</li>
+        <li>Jura de cuentas y tasación de costas</li>
+      </ul>
+    `
+    }),
 
-setupCounter(document.querySelector('#counter'))
+    Section({
+        id: 'contacto',
+        contenido: `
+      <h2>Contacto y formulario de consulta</h2>
+      <p>¿Tienes una consulta? Rellena el formulario y me pondré en contacto contigo.</p>
+      <form onsubmit="event.preventDefault(); alert('Mensaje enviado. Gracias.')">
+        <input type="text"  placeholder="Tu nombre"   required />
+        <input type="email" placeholder="Tu email"    required />
+        <input type="tel"   placeholder="Tu teléfono" />
+        <textarea placeholder="Describe brevemente tu caso..."></textarea>
+        <button type="submit">Enviar consulta</button>
+      </form>
+    `
+    })
+);
