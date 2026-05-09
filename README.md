@@ -7,6 +7,8 @@ La tarea: crear y actualizar la web de [Procurador Tomás](https://www.procurado
 ---
 
 ## 🗂️ Estructura del proyecto
+
+```
 2_Proyecto_Vite_2/
 ├─ index.html
 ├─ package.json
@@ -24,6 +26,7 @@ La tarea: crear y actualizar la web de [Procurador Tomás](https://www.procurado
     │   └─ section.js
     └─ styles/
         └─ style.css
+```
 
 ---
 
