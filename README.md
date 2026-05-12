@@ -1,6 +1,7 @@
 # 2_Proyecto_Vite_2
 
-Proyecto desarrollado en el módulo de FP APOF como práctica de **Vite** y componentes JavaScript.
+> [!NOTE]  
+> Proyecto desarrollado en el módulo de FP APOF como práctica de **Vite** y componentes JavaScript.
 
 La tarea: crear y actualizar la web de [Procurador Tomás](https://www.procuradortomas.com/) usando una arquitectura de componentes.
 
